@@ -1,0 +1,48 @@
+<div class = "container mt-5">
+    <div class = "row">
+        <div class = "col-lg-6 offset-lg-3">
+            <div class = "card">
+                <div class = "card-body text-center">
+                    <span class = "titulo"> REGISTRAR USUARIO</span>
+                    <form [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="nombre" 
+                            class="form-control" placeholder="NOMBRE">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="apellido" 
+                            class="form-control" placeholder="APELLIDOS">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="dni"
+                            class="form-control" placeholder="DNI">
+                        </div>
+                        <div class="mb-3">
+                            <h6 align="left" >Fecha de Nacimiento</h6>
+                            <input type="date" formControlName ="fnacimiento"
+                            class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName = "correo"
+                            class="form-control" placeholder="CORREO">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName = "urlimagen"
+                            class="form-control" placeholder="No podemos cargar imagenes, porfavor añade una descripción">
+                        </div>
+                    
+                        <div class="mb-3">
+                            <button class="btn btn-secondary float-start" routerLink="/">VER REGISTROS</button>
+                            <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-success float-end">GUARDAR</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

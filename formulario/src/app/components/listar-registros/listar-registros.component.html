@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class = "row">
+        <div class = "card">
+            <div class = "card-body text-center">
+                <span>USUARIOS REGISTRADOS</span>
+                <button type="button" class="btn btn-primary float-end" routerLink="/registros">Nuevo Registro</button>
+
+                <table *ngIf = "listRegistros.length >0" class="table table-bordered border-primary mt-4">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col">F. Nacimiento</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Fotografía</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor = "let registro of listRegistros">
+                        <td>{{ registro.nombre}}</td>
+                        <td>{{ registro.apellido}}</td>
+                        <td>{{ registro.dni}}</td>
+                        <td>{{ registro.fnacimiento | date:'mediumDate'}}</td>
+                        <td>{{ registro.correo}}</td>
+                        <td>{{ registro.urlimagen}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h5 *ngIf = "listRegistros.length == 0" >NO HAY USUARIOS REGISTRADOS</h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
